@@ -1,0 +1,70 @@
+{% extends "index.html" %}
+{% block title %}
+<div id="titleRegex">
+    <h1 class="titleHeader">Regex</h1>
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="grid2col mainRegex">
+    <div class="regexFormDiv">
+        <h4>Validação de strings</h4>
+        <p>Preencha o formulário para ver a tecnologia em ação. É bastante utilizada para este tipo de verificações.
+           <p><a href="#regexInfoDiv" class="regexRequisitos"><b>Requisitos</b></a></p>
+            <form action="/regex" method="POST" class="formDiv">
+                <div class="formSubDiv">
+                    <div class="formInput"><label for="name">Nome</label><br><input type="text" name="name"
+                            id="inputName">
+                        {% if results %}
+                        <span class="resultRegex" id="resultName">{{results["name"]}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="formInput"><label for="number">Número</label><br><input type="tel" name="number"
+                            id="inputNumber">
+                        {% if results %}
+                        <span class="resultRegex" id="resultNumber">{{results["number"]}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="formInput"><label for="email">E-mail</label><br><input type="text" name="email"
+                            id="inputEmail">
+                        {% if results %}
+                        <span class="resultRegex" id="resultEmail">{{results["email"]}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="formInput"><label for="password">Password</label><br><input type="password"
+                            name="password" id="inputPassword">
+                        {% if results %}
+                        <span class="resultRegex" id="resultPassword">{{results["password"]}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="formInput"><label for="postalCode">Código Postal</label><br><input type="text"
+                            name="postalCode" id="inputPostalCode">
+                        {% if results %}
+                        <span class="resultRegex" id="resultPostalCode">{{results["postalCode"]}}</span>
+                        {% endif %}</div>
+                   
+
+                </div>
+                <button class="btnSubmit">SUBMIT</button>
+            </form>
+
+    </div>
+    <div id="regexInfoDiv">
+        <h3>Certifique-se de que satifaz os seguintes requisitos:</h3>
+        <b>Password</b>
+        <ol>
+            <li>Uma maiúscula,</li>
+            <li>Três minúscula,</li>
+            <li>Um dígito,</li>
+            <li>Seis carateres,</li>
+            <li>Um carater especial,</li>    
+        </ol>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

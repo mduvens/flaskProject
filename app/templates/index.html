@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="main">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
+    <script src="https://kit.fontawesome.com/a9082643a6.js" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="/static/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/font-awesome.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">
+    <title>Final Project</title>
+    <style>
+
+
+    </style>
+    <script src="/static/js/jquery-3.5.1.js"></script>
+</head>
+
+
+<body>
+    <div class="mainGrid" >
+        <div class="head" id="head">
+            <div class="navWrapper">
+
+          
+            <nav class="navbar " id="navbar">
+                    <div class="navLogo "><cite>Compiladores</cite> </div>
+                    <div class="navToggle "><i class="fas fa-bars"></i></></i></div>
+
+                    <div class="navLinks hide">   
+                        <a href="/" class="hoverLink navLink hide">Home</a>
+                        <a href="/automato" class="hoverLink navLink hide">Automato</a>
+                        <a href="/regex" class="hoverLink navLink hide">Regex</a>
+                        <a href="/webscrap" class="hoverLink navLink hide">Webscrap</a>
+                        <a href="/about" class="hoverLink navLink hide">About</a>
+                    </div>
+
+    
+             
+            </nav>
+    
+            <div class="contentTitle">
+                {% block title %}
+                {% endblock %}
+            </div>
+        </div>
+            <div class="content " id="content">
+                    
+             
+                    <div id="main">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                  
+             
+               
+            </div>
+        </div>
+        <div class="foot  " id="foot">
+            <!-- whiteText -->
+            <h5 class="footerText "> &copy; Uníversidade Lusíada de Lisboa 2020 - Manuel Gonçalves</h5>
+        </div>
+
+
+    </div>
+   
+    <script>
+        let vw, vh, headerSize
+        window.onscroll = function () {
+            vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+            vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+            headerSize = 0.30 * vh
+            console.log(`WIDTH ${vw} HEIGTH ${vh}`)
+            "use strict";
+            var alpha = document.documentElement.scrollTop * 1 / headerSize
+            if (alpha > 1) alpha = 1
+            $(".navHead").css('background-color', `rgba(0, 0, 0, ${alpha})`)
+        };
+            $(".navToggle").click(() => {
+                if ($(".navLinks").hasClass("hide"))
+    
+                    $(".navLinks").removeClass("hide")
+                else $(".navLinks").addClass("hide")
+            })
+        
+       
+    </script>
+</body>
+
+</html>

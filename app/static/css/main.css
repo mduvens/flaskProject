@@ -1,0 +1,374 @@
+:root {
+    --headers-background:url('/static/img/nhoko.jpg');
+    --main-background: whitesmoke;
+    --text-color: rgb(0, 0, 0);
+    --header-color: whitesmoke;
+    --head-height: 5vh;
+    --min-width-mobile: 320px;
+    --fadeInDuration: 600ms;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    /* background: #393e46; */
+    background: whitesmoke;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222831;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #112831;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100vw;
+    font-family: 'Muli', sans-serif !important;
+    text-shadow: 10px 10px 30px  rgba(0, 0, 0, 0.24);
+    color: var(--text-color);
+    /* box-sizing: border-box;*/
+    /* background-image: url('/static/img/nhoko.jpg'); */
+    background: var(--main-background);
+    background-size: cover;
+
+}
+body > * > * > * > * > *, .footerText{ /* trying to fadeIn all text  SUCCESS*/ 
+    animation: fadeIn;
+    animation-duration: var(--fadeInDuration);
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* GRID CONFIG */
+#head{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    margin: auto;
+    overflow: auto;
+
+    /* padding-top: 10vh; */
+}
+
+#foot{
+    /* grid-area:footer; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:var(--headers-background);
+    color: var(--header-color);
+}
+
+.mainGrid{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(96vh,1fr) 4vh;
+    grid-template-areas:
+    'header'
+    'footer';
+}
+#main{
+    /* height: fit-content; */
+}
+#navbar{
+    /* position: fixed;
+    width: 100%; */
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,50%);
+    /* padding: 1vh 1em ; */
+    color: var(--header-color);
+    font-size: 2.2vh;
+    z-index: 500;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.651);
+    position: relative;
+}
+.navWrapper{
+    background: var(--headers-background);
+    background-attachment: fixed;
+   
+}
+.navLogo{
+   font-size: 1.3em;
+   text-align: center;
+   display: flex;
+   justify-content: flex-start;
+   cursor: default;
+}
+
+.navToggle{
+    display: none;
+}
+.navToggle,.navLogo{
+    padding: 1em;
+}
+.navLinks{
+    display: flex;
+    justify-content: flex-end;
+    /* column-gap: 2em; */
+
+}
+.navLink{
+    /* margin-inline-end: 2em; */
+    text-decoration: none;
+    border-radius: .2em; 
+    /* border: 2px solid whitesmoke; */
+    padding: .7em 1em;
+    margin-inline: 1vw;
+}
+#content{
+    display: flex;
+    flex-direction: column ;
+    height: 100%;
+    text-align: center;
+}
+ .contentTitle{
+    background-attachment: fixed;
+
+}
+.contentTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    min-height: 30vh;
+    color: whitesmoke;
+}
+
+
+.scrapGrid{
+    display: grid;
+    gap: 2em;
+    margin: 2em 0 2em 0;
+}
+.divLigaNOS{
+    background: linear-gradient(rgba(20,20,20,0.8),rgba(20,20,20,0.8)),url('/static/img/luz.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* height: 100%; */
+    /* background-position: center; */
+    color: whitesmoke;
+}
+
+.divScrapGold{
+    background: linear-gradient(rgba(20,20,20,0.8),rgba(20,20,20,0.8)), url('/static/img/gold.jpg') no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+}
+
+.respGold{
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divInsideScrap{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.scrapEquipa{
+    text-align: left;
+}
+/* .divIntroducao{
+    width: min(1200px,80%);
+    margin: auto;
+} */
+.infoIntro{
+    text-align: justify;
+}
+
+.formSubDiv{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    text-align: left;
+    align-items: center;
+}
+.formInput{
+    width: 80%;
+    margin-top: 2vh;
+}
+input{
+    width: 100%;
+    border-radius: 5px;
+    line-height: 3vh;
+    font-size:2vh;
+    /* margin-bottom: .2vh; */
+}
+label{
+    font-weight: bold;
+}
+#regexInfoDiv{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    margin: auto;
+}
+
+.grid2col{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-width-mobile),1fr));
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    padding:2em 0 2em 0;
+   
+}
+.divScrapGold{
+    padding: 0 0 2em 0;
+}
+.divLigaNOS{
+    padding: 0;
+
+}
+
+.grid2col.reverse{
+    direction: rtl;
+    
+}
+.grid2col.reverse > * {
+    direction: ltr;
+}
+/* MISC */
+
+.navLogo,.navLinks,.contentTitle{
+    text-shadow: 0px 2px 5px rgba(245, 245, 245, 0.329);
+
+}
+.hoverLink{
+    transition: background-color var(--animate-duration) ease-in-out;
+}
+
+.hoverLink:hover{
+    background-color: #31343b;
+}
+.flexImg{
+    width: 100%;
+}
+.bigImg{
+    width: 85%;
+}
+.fas{
+    font-size: 2em;
+
+}
+.header{
+    font-size: 4vh;
+}
+.header2{
+    margin: 8vh 0 5vh 0;
+}
+.rowHeaders > *{
+    padding: 1vw;
+}
+.btnSubmit{
+    padding: .7em 1em;
+    margin-top: 2vh;
+    border: 2px solid black;
+    font-weight: bolder;
+    background-color: rgba(245, 245, 220, 0);
+    transition: color 500ms ease-in-out,background-color 500ms ease-in-out;
+    cursor: pointer;
+    letter-spacing: .1em;
+}
+.btnSubmit:hover{
+    background-color: black;
+    color: white;
+}
+.respNOS{
+    background: rgba(0, 0, 0, 0.486);
+    border-radius: 1em;
+    padding: 0 1em 1em 1em;
+}
+/* MEDIA QUERIES (TRYING TO MINIMIZE IT) */
+@media screen and (min-width: 850px){
+    .scrapMainDiv{
+        width: 70%;
+        /* gap: 4em; */
+    }
+    .grid2col,.grid2col > *{
+        width: 80%;
+        margin: auto;
+    }
+   
+    .navLinks{
+        /* animation: fadeIn */
+        /* animation-duration: var(--animate-duration); */
+    }
+    .btnRegexRequisitos{
+        display: none;
+    }
+    .afdDiv{
+        margin-top: 10vh;
+    }
+
+
+}
+
+@media screen and (max-width: 850px){
+    .grid2col,.grid2col > *{
+        width: 95%;
+        margin: auto;
+    }
+    .contentTitle{
+        font-size: .8rem;
+        min-height: 40vh;
+    }
+    .headerGold{
+        margin: 5vh 0 0 0;
+    }
+    .divInsideScrap{
+        padding: 0;
+    }
+    .respGold{
+        min-height: 30vh;
+    }
+    .footerText{
+        font-size: 1.5vh;
+    }
+    #navbar{
+        align-items: center;
+        /* margin-bottom: 10vh; */
+    }
+    .navToggle{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navLinks{
+        flex-direction: column;
+        text-align: center;
+        /* row-gap: 4vh; */
+        padding: 2vh 0 4vh 0;
+        grid-column: span 2 ;
+        font-size: 3vh;
+        animation: fadeInLeft;
+        /* animation-duration: var(--animate-duration); */
+    }
+    .navLinks.hide{
+        display: none;
+    }
+}

@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+{% block title %}
+    <h1 class="headerTitle">Webscraping with BeautifulSoup4</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="scrapGrid">
+        <div class="grid2col divLigaNOS">
+            <div class="divInsideScrap">
+                <h1 class="header"> Classificações em tempo real</h1>
+        
+            </div>
+           
+            <div class="divInsideScrap">
+
+                <div class="responseDiv respNOS"> 
+                <h1 class="header"> Liga NOS 2020/2021</h1>
+
+                    <table>
+                        <!-- {% if tabelaClass %} -->
+                        <tr class="rowHeaders">
+                            <td></td>
+                            <td>JJ</td>
+                            <td>V</td>
+                            <td>E</td>
+                            <td>D</td>
+                            <td>GM</td>
+                            <td>GS</td>
+                            <td>P</td>
+                        </tr>
+                        {% for equipa in tabelaClass %}
+                            <tr>
+                                <td class="scrapEquipa">{{equipa}}</td>
+                                <td>{{tabelaClass[equipa]['jj']}}</td>
+                                <td>{{tabelaClass[equipa]['win']}}</td>
+                                <td>{{tabelaClass[equipa]['draw']}}</td>
+                                <td>{{tabelaClass[equipa]['lost']}}</td>
+                                <td>{{tabelaClass[equipa]['scored']}}</td>
+                                <td>{{tabelaClass[equipa]['suffered']}}</td>
+                                <td>{{tabelaClass[equipa]['points']}}</td>
+                            </tr>
+                        {% endfor %}
+        
+                        <!-- {% endif %} -->
+        
+                    </table>
+        
+                </div>
+            </div>
+        </div>
+        <div class="grid2col reverse divScrapGold" >
+            <div class="divInsideScrap " id="divInfoPlot">
+                <h1 class="header">Preço do ouro em tempo real. Gráfico gerado através do Matplotlib. </h1>
+        
+            </div>
+    
+            <div class="divInsideScrap " id="plot2">
+                <h1 class="headerGold">Live Gold Price</h1>
+                <div class="responseDiv respGold"> 
+                <img class="flexImg bigImg" src="/getPlot" alt="P1">
+                </div>
+            </div>
+           
+        </div>
+           
+      
+    
+    </div>
+
+        <script>  
+            setInterval(() => {
+                $.get('/getPlot')
+                $(".respGold").load('/getImage')
+            },11000)
+        </script>
+ 
+
+{% endblock %}
