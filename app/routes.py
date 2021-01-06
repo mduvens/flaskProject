@@ -53,4 +53,4 @@ def plot_png():
 
 @app.route('/getImage')
 def imageTest():
-    return "<img class='flexImg bigImg'src='/getPlot' alt=''>"
+    return "<img class='flexImg plotGold'src='/getPlot' alt=''>"

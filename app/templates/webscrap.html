@@ -1,14 +1,14 @@
 {% extends "index.html" %}
 {% block title %}
-    <h1 class="headerTitle">Webscraping with BeautifulSoup4</h1>
+    <h1 class="headerTitle">Webscraping | BeautifulSoup4</h1>
 {% endblock %}
 
 {% block content %}
     <div class="scrapGrid">
         <div class="grid2col divLigaNOS">
             <div class="divInsideScrap">
-                <h1 class="header"> Classificações em tempo real</h1>
-        
+                <h1 class="headerInfoScrap"> Classificações em tempo real</h1>
+                <h4>Fonte: <a href="https://liganos.pt/">Liga NOS</a></h4>
             </div>
            
             <div class="divInsideScrap">
@@ -50,14 +50,15 @@
         </div>
         <div class="grid2col reverse divScrapGold" >
             <div class="divInsideScrap " id="divInfoPlot">
-                <h1 class="header">Preço do ouro em tempo real. Gráfico gerado através do Matplotlib. </h1>
-        
+                <h1 class="headerInfoScrap">Preço do ouro em tempo real </h1>
+                <h3>Gráfico gerado através do <a href="https://matplotlib.org/" id="linkMatplotlib">Matplotlib</a> </h3>
+                <h4>Fonte: <a href="https://finance.yahoo.com/quote/GC=F?p=GC=F">Finance Yahoo!</a></h4>
+
             </div>
     
             <div class="divInsideScrap " id="plot2">
-                <h1 class="headerGold">Live Gold Price</h1>
                 <div class="responseDiv respGold"> 
-                <img class="flexImg bigImg" src="/getPlot" alt="P1">
+                <img class="flexImg plotGold" src="/getPlot" alt="P1">
                 </div>
             </div>
            

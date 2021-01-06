@@ -8,7 +8,7 @@
 
 {% block content %}
 <!-- <div class="divIntroducao"> -->
-<h2 class="header2" id="titleRegex">AFD- Autómatos Finitos Determinísticos</h2>
+<h2 class="header2" id="titleRegex">AFD | Autómatos Finitos Determinísticos</h2>
 <div class="grid2col ">
     <div>
         <img class="flexImg bigImg" src="/static/img/automato.jpg" alt="automato.png">
@@ -21,9 +21,11 @@
             os quais efectua as validações e define o "flow do programa", através da
             <b>tabela de transição</b>. Ao receber cada símbolo de entrada, o dispositivo verifica qual o estado
             resultante, dependendo do estado actual e do símbolo inserido. A validação ocorrre quando
-            o <b>estado final</b> for igual ao <b>estado de aceitação </b> Tem uma memória finita e uma fita de entrada.
+            o <b>estado final</b> for igual ao <b>estado de aceitação</b>. Na essência, é uma máquina ou robô que se
+            opera de maneira automática.
+            Tem uma memória finita e uma fita de entrada.
         </p>
-        <p>Um AFD é então definido por 5 conjuntos - <b>Quíntuplo</b> </p>
+        <p>Um AFD é então definido por 5 conjuntos | <b>Quíntuplo</b> </p>
         <ol>
             <li><b>Alfabeto</b></li>
             <li><b>Estados</b></li>
@@ -34,7 +36,7 @@
     </div>
 
 </div>
-<h2 class="header2" id="titleRegex">Expressões Regulares + Regex</h2>
+<h2 class="header2" id="titleRegex">Expressões Regulares | Regex</h2>
 
 <div class="grid2col reverse">
     <div>
@@ -49,15 +51,17 @@
             strings, <b>Localização</b> de substrings, ou até mesmo <b>Substituição</b> de uma (sub)string por outra.
             Para construir <b>ER</b>s, são usados dois tipos de caracteres:
             <ul>
-                <li><b>Literais:</b> os caracteres presentes nas strings  - Letras e Dígitos</li><br>
-                <li><b>Metacaracteres:</b> os caracteres especialmente interpretados por um motor <b>RegEx</b> - \^.[]{}?+ e outros mais..</li>
+                <li><b>Literais:</b> os caracteres presentes nas strings. <br> <b>-</b> Letras, dígitos, caracteres
+                    especiais </li><br>
+                <li><b>Metacaracteres:</b> os caracteres especialmente interpretados por um motor <b>RegEx</b>.
+                    <br><b>-</b> $ \ ^ . [ ] { } ? +</li>
             </ul>
         </p>
 
     </div>
 
 </div>
-<h2 class="header2" id="titleWebscrap">WebScraping with BeautifulSoup4</h2>
+<h2 class="header2" id="titleWebscrap">WebScraping | BeautifulSoup4</h2>
 
 <div class="grid2col ">
     <div>
@@ -65,8 +69,10 @@
 
     </div>
     <div class="infoIntro">
-        <p>Web Scraping ou Raspagem da Web - traduzindo para Português - é uma tecnologia utilizada para obter o conteúdo 
-            de um website, mais precisamente o seu HTML, geralmente utilizada em conjunto com o <b>RegEx</b>, para filtrar a 
+        <p>Web Scraping ou Raspagem da Web - traduzindo para Português - é uma tecnologia utilizada para obter o
+            conteúdo
+            de um website, mais precisamente o seu HTML, geralmente utilizada em conjunto com o <b>RegEx</b>, para
+            filtrar a
             informção pretendida. Alguns exemplos de aplicações de WebScrap:
             <ul>
                 <li>Extrair resultados dos jogos de futebol</li>
@@ -75,6 +81,74 @@
                 <li>Muitas outras aplicações..</li>
 
             </ul>
+        </p>
+
+    </div>
+
+</div>
+<h2 class="header2" id="titleCFG">CFG | Gramáticas Livres de Contexto</h2>
+
+<div class="grid2col col4 reverse no-margin-bottom">
+    <div>
+        <img class="flexImg cfgImg" src="/static/img/cfg.png" alt="CONTEXT FREE GRAMMAR">
+
+    </div>
+    <div class="infoIntro">
+        <p>Uma gramática livre de contexto é um <b>conjunto de regras recursivas</b>  usadas para <b>gerar padrões de strings</b> .Uma
+            gramática livre de contexto <b>pode descrever todas as linguagens regulares</b> e muito mais, mas não pode
+            descrever todas as linguagens possíveis. Gramáticas livres de contexto são estudadas nos campos da ciência
+            da computação teórica, projeto de compiladores e linguística.
+            CFGs são <b>usadas ​​para descrever linguagens de programação</b> , e programas analisadores em compiladores <b>(parsers)</b> podem
+            ser gerados automaticamente a partir de gramáticas livres de contexto.
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="grid2col no-margin-y ">
+    <div class="infoIntro">
+        <p class="text-center"><b>Problemas com as gramáticas</b> </p>
+        <p>Uma gramática pode ter problemas como:
+            <ol>
+                <li><b>Ambiguidade</b>
+                    <ul><li>Uma gramática diz-se ambígua se é possível derivar uma sequência de duas ou mais
+                        formas diferentes, ou seja, podemos chegar a <b>resultados diferentes</b>. </li></ul></li>
+                </li>
+                <li><b>Recursiva à esquerda</b>
+                    <ul><li>A
+                        maior parte dos parsers (top-down) não suportam recursividade à esquerda, pois corre-se o risco de entrar um <b>ciclo infinito</b>  </li></ul></li>
+                </li>
+                <li><b>Não determinística.</b>
+                 <ul><li>Uma gramática diz-se não-determinística se é existem <b>prefixos comuns</b> entre as derivações dessa gramática. </li></ul></li></li>
+
+            </ol>
+
+        </p>
+
+    </div>
+    <div class="infoIntro">
+        <p class="text-center"><b>Análise dos problemas</b> </p>
+
+        <p>Para verificar se uma gramática está correta e pronta a ser compilada/utilizada, são utilizados <b>analisadores sintáticos</b> e semânticos.
+            Existem 2 tipos de analisadores sintáticos: 
+            <ol>
+                <li><b>Análise Sintática Descendente</b>
+                    <ul>
+                        <li>LL(1)</li>
+                    </ul>
+                </li>
+                <li><b>Análise Sintática Ascendente</b></li>
+                <ul>
+                    <li>LR(1)</li>
+                    <li>SLR(1)</li>
+                    <li>CLR(1)</li>
+                    <li>LALR(1)</li>
+
+                </ul>
+            </ol>
+
         </p>
 
     </div>

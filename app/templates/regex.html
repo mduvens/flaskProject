@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block title %}
 <div id="titleRegex">
-    <h1 class="titleHeader">Regex</h1>
+    <h1 class="headerTitle">Regex</h1>
 
 </div>
 {% endblock %}
@@ -11,7 +11,7 @@
     <div class="regexFormDiv">
         <h4>Validação de strings</h4>
         <p>Preencha o formulário para ver a tecnologia em ação. É bastante utilizada para este tipo de verificações.
-           <p><a href="#regexInfoDiv" class="regexRequisitos"><b>Requisitos</b></a></p>
+           <p><a href="#regexInfoDiv" class="btnRegexRequisitos"><b>Requisitos</b></a></p>
             <form action="/regex" method="POST" class="formDiv">
                 <div class="formSubDiv">
                     <div class="formInput"><label for="name">Nome</label><br><input type="text" name="name"
@@ -52,6 +52,20 @@
     </div>
     <div id="regexInfoDiv">
         <h3>Certifique-se de que satifaz os seguintes requisitos:</h3>
+        <b>Nome</b>
+        <ul>
+            <li>Apenas letras</li>   
+        </ul>
+        <b>Nome</b>
+        <ul>
+            <li>Começa por 2|7|8|9</li>
+            <li>9 dígitos</li>   
+
+        </ul>
+        <b>E-mail</b>
+        <ul>
+            <li>exemplo@lisboa.pt</li>   
+        </ul>
         <b>Password</b>
         <ol>
             <li>Uma maiúscula,</li>
@@ -60,6 +74,10 @@
             <li>Seis carateres,</li>
             <li>Um carater especial,</li>    
         </ol>
+        <b>Código Postal</b>
+        <ul>
+            <li>XXXX - XXX </li>   
+        </ul>
     </div>
 
 </div>

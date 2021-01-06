@@ -1,7 +1,7 @@
-import re
+import regex
 
 def checkRegex(form):
-    name = postalCode = email = password = number = "Não preencheu!"
+    name = postalCode = email = password = number = "⚠️Não preencheu! "
     if form["name"]: name = checkName(form["name"])
     if form["number"]: number = checkNumber(form["number"])
     if form["email"]: email = checkEmail(form["email"])
@@ -10,41 +10,41 @@ def checkRegex(form):
     return {"name":name,"number":number,"email":email,"password":password,"postalCode":postalCode}
 
 def checkEmail(string):
-    regex = r'^([\w\.-]+[@]\w+[.]\w{2,})$'
-    x = re.match(regex, string)
+    check = r'^([\w\.-]+[@]\w+[-]*\w+[.]\w{2,})$'
+    x = regex.match(check, string)
     if x:
-        return 'E-mail válido'
+        return '✅E-mail válido'
     else:
-        return 'E-mail não aceite'
+        return '❌E-mail não aceite'
 
 def checkName(string):
-    regex = r'^[a-zA-Z\s]*$'
-    x = re.match(regex, string)
+    check = r'^[a-zA-Z\s]*$'
+    x = regex.match(check, string)
     if x:
-        return 'Nome válido'
+        return '✅Nome válido'
     else:
-        return 'Nome não aceite'
+        return '❌Nome não aceite'
 def checkPassword(string):
-    regex  = r'^(?=.*[A-Z])(?=(?:.*[a-z]){3})(?=.*\d)(?=\S{6,})(?=.*\W)(?!.*\s+)'
+    check  = r'^(?=.*[A-Z])(?=(?:.*[a-z]){3})(?=.*\d)(?=\S{6,})(?=.*\W)(?!.*\s+)'
 
-    x = re.match(regex, string)
+    x = regex.match(check, string)
     if x:
-        return 'Password válida'
+        return '✅Password válida'
     else:
-        return 'Password não aceite'
+        return '❌Password não aceite'
     
 def checkNumber(string):
-    regex = r'^[2789][\d]{8}$'
+    check = r'^[2789][\d]{8}$'
 
-    if re.match(regex,string):
-        return 'Número válido'
+    if regex.match(check,string):
+        return '✅Número válido'
     else:
-        return 'Número inválido'
+        return '❌Número inválido'
         
 def checkPostal(string):
-    regex = r'^[0-9]{4}-[0-9]{3}$'
+    check = r'^[0-9]{4}[-\s][0-9]{3}$'
 
-    if re.match(regex,string):
-        return 'postal válido'
+    if regex.match(check,string):
+        return '✅Postal válido'
     else:
-        return 'postal inválido'
+        return '❌Postal inválido'

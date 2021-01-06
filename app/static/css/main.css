@@ -1,3 +1,4 @@
+
 :root {
     --headers-background:url('/static/img/nhoko.jpg');
     --main-background: whitesmoke;
@@ -5,7 +6,15 @@
     --header-color: whitesmoke;
     --head-height: 5vh;
     --min-width-mobile: 320px;
-    --fadeInDuration: 600ms;
+    --fadeInDuration: 500ms;
+    --html-color:rgba(355, 133, 0, 0.884); 
+    --css-color:rgb(0, 132, 255); 
+    --javascript-color:goldenrod; 
+    --python-color:darkblue; 
+    --flask-color:black; 
+    --heroku-color:darkslateblue; 
+
+
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +42,7 @@ body {
     overflow-x: hidden;
     width: 100vw;
     font-family: 'Muli', sans-serif !important;
-    text-shadow: 10px 10px 30px  rgba(0, 0, 0, 0.24);
+    text-shadow: 10px 10px 30px  rgba(0, 0, 0, 0.199);
     color: var(--text-color);
     /* box-sizing: border-box;*/
     /* background-image: url('/static/img/nhoko.jpg'); */
@@ -41,13 +50,21 @@ body {
     background-size: cover;
 
 }
+
 body > * > * > * > * > *, .footerText{ /* trying to fadeIn all text  SUCCESS*/ 
     animation: fadeIn;
     animation-duration: var(--fadeInDuration);
+
 }
+/* h1,h2,b{
+    color:  var(--header-color);;
+} */
 a{
+    color: black;
+}
+.navLinks > a{
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--header-color);
 }
 
 /* GRID CONFIG */
@@ -61,7 +78,9 @@ a{
 
     /* padding-top: 10vh; */
 }
-
+#main{
+    margin-bottom: 1em;
+}
 #foot{
     /* grid-area:footer; */
     display: flex;
@@ -69,6 +88,7 @@ a{
     align-items: center;
     background:var(--headers-background);
     color: var(--header-color);
+    cursor: default;
 }
 
 .mainGrid{
@@ -81,9 +101,6 @@ a{
     'header'
     'footer';
 }
-#main{
-    /* height: fit-content; */
-}
 #navbar{
     /* position: fixed;
     width: 100%; */
@@ -95,8 +112,9 @@ a{
     font-size: 2.2vh;
     z-index: 500;
     border: none;
-    background-color: rgba(0, 0, 0, 0.651);
+    background-color: rgba(0, 0, 0, 0.747);
     position: relative;
+    box-shadow: 0px 0px 50px black;
 }
 .navWrapper{
     background: var(--headers-background);
@@ -127,9 +145,10 @@ a{
     /* margin-inline-end: 2em; */
     text-decoration: none;
     border-radius: .2em; 
+    font-size: 1.1em;
     /* border: 2px solid whitesmoke; */
-    padding: .7em 1em;
-    margin-inline: 1vw;
+    padding: .5em 1em;
+    margin-inline: .6em;
 }
 #content{
     display: flex;
@@ -149,7 +168,7 @@ a{
     text-align: center;
 
     min-height: 30vh;
-    color: whitesmoke;
+    color: var(--header-color);
 }
 
 
@@ -158,6 +177,10 @@ a{
     gap: 2em;
     margin: 2em 0 2em 0;
 }
+.scrapGrid > *{
+    box-shadow: 0px 0px 7px black;
+
+}
 .divLigaNOS{
     background: linear-gradient(rgba(20,20,20,0.8),rgba(20,20,20,0.8)),url('/static/img/luz.jpg') no-repeat;
     background-size: cover;
@@ -165,16 +188,20 @@ a{
     /* height: 100%; */
     /* background-position: center; */
     color: whitesmoke;
+    padding: 0;
+
 }
 
 .divScrapGold{
     background: linear-gradient(rgba(20,20,20,0.8),rgba(20,20,20,0.8)), url('/static/img/gold.jpg') no-repeat;
     background-size: cover;
     color: whitesmoke;
+    padding: 0 0 2em 0;
+
 }
 
 .respGold{
-    min-height: 30vh;
+    min-height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,16 +212,13 @@ a{
     text-align: center;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    /* padding-top: 1em; */
 }
 
 .scrapEquipa{
     text-align: left;
 }
-/* .divIntroducao{
-    width: min(1200px,80%);
-    margin: auto;
-} */
+
 .infoIntro{
     text-align: justify;
 }
@@ -230,7 +254,7 @@ label{
 
 .grid2col{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--min-width-mobile),1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -238,14 +262,14 @@ label{
     padding:2em 0 2em 0;
    
 }
-.divScrapGold{
-    padding: 0 0 2em 0;
-}
-.divLigaNOS{
+.no-margin-y {
     padding: 0;
-
+    margin: 0 auto 0 auto;
 }
-
+.no-margin-bottom{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
 .grid2col.reverse{
     direction: rtl;
     
@@ -253,6 +277,158 @@ label{
 .grid2col.reverse > * {
     direction: ltr;
 }
+.cardContainer{
+    display: grid;
+    justify-content: center;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit,minmax(320px,600px));
+    width: 90%;
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    /* flex-direction: row; */
+}
+.cardContainer > a {
+    text-decoration: none;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 1em;
+    background-color: none;
+    cursor: pointer;
+    
+}
+.card, .cardHeader{
+    transition: transform 300ms ease-out,color 300ms ease-out,background-color 300ms ease-out ;
+    
+
+}
+.card,.infoIntro{
+    line-height: 1.4em;
+
+}
+
+.cardHeader{
+    margin-top: 1em;
+    font-size: 3vh;
+    font-weight: bolder;
+
+   
+}
+.cardContent{
+    text-align: justify;
+    margin: 2em;
+
+}
+.cardLearnMore{
+    font-weight: bold;
+    display: none;
+    color: whitesmoke;
+    transition: display 500ms;
+}
+.cardHTML{
+    box-shadow: 0px 0px 7px var(--html-color)
+}
+.cardCSS{
+    box-shadow: 0px 0px 7px var(--css-color); 
+}
+.cardJavascript{
+    box-shadow: 0px 0px 7px var(--javascript-color); 
+}
+.cardPython{
+    box-shadow: 0px 0px 7px var(--python-color); 
+}
+.cardFlask{
+    box-shadow: 0px 0px 7px var(--flask-color); 
+}
+.cardHeroku{
+    box-shadow: 0px 0px 7px var(--heroku-color); 
+}
+.cardHTML .cardHeader{
+    color: var(--html-color)
+}
+.cardCSS .cardHeader{
+    color: var(--css-color); 
+}
+.cardJavascript .cardHeader{
+    color: var(--javascript-color); 
+}
+.cardPython .cardHeader{
+    color: var(--python-color); 
+}
+.cardFlask .cardHeader{
+    color: var(--flask-color); 
+}
+.cardHeroku .cardHeader{
+    color: var(--heroku-color); 
+}
+
+.card:hover, .card:hover .cardHeader{
+    color: white
+}
+.card:hover .cardLearnMore{
+    display: block;
+}
+.cardHTML:hover{
+    background-color: var(--html-color); 
+}
+.cardCSS:hover{
+    background-color: var(--css-color) 
+}
+.cardJavascript:hover{
+    background-color:var(--javascript-color)
+}
+.cardPython:hover{
+    background-color: var(--python-color); 
+}
+.cardFlask:hover{
+    background-color: var(--flask-color); 
+}
+.cardHeroku:hover{
+    background-color: var(--heroku-color); 
+}
+.cardImg{
+    width: 10vw;
+}
+.card:hover{
+    transform: scale(1.02);
+}
+
+.divGithubLink{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0 2em 0;
+}
+.wrapperGit{
+    display: flex;
+    align-items: center;
+    transition: background-color 300ms ease-out;
+    border-radius: 1em;
+    box-shadow: 0px 0px 5px black;
+    cursor: pointer;
+
+}
+.wrapperGit > a {
+    margin-inline: 1em;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.wrapperGit:hover{
+    background-color: black;
+    
+}
+.wrapperGit:hover a{
+    color: white;
+
+}
+
 /* MISC */
 
 .navLogo,.navLinks,.contentTitle{
@@ -260,7 +436,7 @@ label{
 
 }
 .hoverLink{
-    transition: background-color var(--animate-duration) ease-in-out;
+    transition: background-color var(--fadeInDuration) ease-out;
 }
 
 .hoverLink:hover{
@@ -270,68 +446,97 @@ label{
     width: 100%;
 }
 .bigImg{
-    width: 85%;
+    width: 65%;
 }
 .fas{
     font-size: 2em;
 
 }
+.text-center{
+    text-align: center;
+}
 .header{
     font-size: 4vh;
 }
 .header2{
-    margin: 8vh 0 5vh 0;
+    margin: 7vh 0 5vh 0;
 }
 .rowHeaders > *{
     padding: 1vw;
 }
 .btnSubmit{
     padding: .7em 1em;
-    margin-top: 2vh;
-    border: 2px solid black;
+    margin-top: 3vh;
+    border: 2px solid var(--text-color);
+    color:  var(--text-color);;
     font-weight: bolder;
+    
     background-color: rgba(245, 245, 220, 0);
     transition: color 500ms ease-in-out,background-color 500ms ease-in-out;
     cursor: pointer;
     letter-spacing: .1em;
+  
 }
 .btnSubmit:hover{
-    background-color: black;
+    background-color:  var(--text-color);;
     color: white;
 }
 .respNOS{
     background: rgba(0, 0, 0, 0.486);
     border-radius: 1em;
-    padding: 0 1em 1em 1em;
+    padding: 1em 1.5em 1em 1.5em;
+}
+.respNOS, .plotGold{
+    box-shadow: 0px 0px 10px black;
+
+}
+.afdInputDiv > * + *{ /* all the children of "afdInputDiv" that have a sibling before it*/
+    margin: 2em 0 2em 0;
+}
+
+.divInsideScrap > * >  a{
+    color: rgba(245, 245, 245, 0.829);
+}
+.cfgImg{
+    box-shadow: 0px 0px 5px black;
+    
 }
 /* MEDIA QUERIES (TRYING TO MINIMIZE IT) */
-@media screen and (min-width: 850px){
+@media screen and (min-width: 1024px){
     .scrapMainDiv{
         width: 70%;
         /* gap: 4em; */
     }
-    .grid2col,.grid2col > *{
+    .grid2col,.cfgImg{
         width: 80%;
         margin: auto;
     }
-   
-    .navLinks{
-        /* animation: fadeIn */
-        /* animation-duration: var(--animate-duration); */
+    .grid2col > *{
+        width: 90%;
+        margin: auto;
     }
+   
     .btnRegexRequisitos{
         display: none;
     }
     .afdDiv{
         margin-top: 10vh;
     }
-
-
+    .card{
+    min-height: 35vh;
+    }
+    
+    .plotGold{
+        width: 75%;
+    }
+    .navLinks{
+        margin-inline-end:1.2em;
+    }
 }
 
-@media screen and (max-width: 850px){
-    .grid2col,.grid2col > *{
-        width: 95%;
+@media screen and (max-width: 1024px){
+    .grid2col > *{
+        width: 90%;
         margin: auto;
     }
     .contentTitle{
@@ -344,15 +549,19 @@ label{
     .divInsideScrap{
         padding: 0;
     }
-    .respGold{
-        min-height: 30vh;
+    .divLigaNOS,.divScrapGold{
+        width: 100%;
+        border-radius: 10px;
     }
+    .headerInfoScrap{
+        margin-top: 1.5em;
+    }
+    
     .footerText{
         font-size: 1.5vh;
     }
     #navbar{
         align-items: center;
-        /* margin-bottom: 10vh; */
     }
     .navToggle{
         display: flex;
@@ -361,14 +570,26 @@ label{
     .navLinks{
         flex-direction: column;
         text-align: center;
-        /* row-gap: 4vh; */
+        row-gap: 1.5vh;
         padding: 2vh 0 4vh 0;
         grid-column: span 2 ;
         font-size: 3vh;
         animation: fadeInLeft;
-        /* animation-duration: var(--animate-duration); */
     }
     .navLinks.hide{
         display: none;
+    }
+    .card{
+        font-size: 1.1em;
+    }
+    .cardHeader{
+        font-size: 4vh;
+        margin-top: 2em;
+    }
+    .plotGold{
+        width: 95%;
+    }
+    #regexInfoDiv{
+        margin-top: 2em;
     }
 }
